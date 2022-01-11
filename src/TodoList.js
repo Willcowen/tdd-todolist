@@ -6,7 +6,6 @@ DONE - Get only todo items that are incomplete
 DONE - Get only todo items that are complete
 DONE - Search and return a todo item by its ID, or return a message saying it doesn’t exist
 DONE - Remove a todo item by its ID 
-
 */
 
 
