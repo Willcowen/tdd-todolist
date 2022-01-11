@@ -14,10 +14,10 @@ class TodoList {
     this.list = []
     this.nextID = 1
     }
-    create(str){
+    create(description){
       const todo = {
           id: this.nextID,
-          text: str,
+          text: description,
           status: "incomplete"
       }
       this.nextID++

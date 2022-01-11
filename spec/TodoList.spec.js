@@ -57,11 +57,6 @@ describe("TodoList", () => {
 
   it("return all incomplete todo's", () => {
     // set up
-    const one = {
-      id: 1,
-      text: "Make some food!",
-      status: "complete"
-    }
     const expected = [{
       id: 2,
       text: "Wash the dishes!",
@@ -84,11 +79,6 @@ describe("TodoList", () => {
 
   it("return all complete todo's", () => {
     // set up
-    const one = {
-      id: 1,
-      text: "Make some food!",
-      status: "incomplete"
-    }
     const expected = [{
       id: 2,
       text: "Wash the dishes!",
