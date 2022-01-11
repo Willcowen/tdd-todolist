@@ -12,7 +12,8 @@ describe("TodoList", () => {
     const expected = {
       id: 1,
       text: "turn the heating on!",
-      status: "incomplete"
+      status: "incomplete",
+      creation: Date().substring(0, 15)
     }
     // execute
     const result = todoList.create("turn the heating on!")
@@ -25,12 +26,14 @@ describe("TodoList", () => {
     const one = {
       id: 1,
       text: "turn the heating on!",
-      status: "incomplete"
+      status: "incomplete",
+      creation: Date().substring(0, 15)
     }
     const two = {
       id: 2,
       text: "make the bed!",
-      status: "incomplete"
+      status: "incomplete",
+      creation: Date().substring(0, 15)
     }
     const expected = [one, two]
     // execute
@@ -46,7 +49,8 @@ describe("TodoList", () => {
     const expected = {
       id: 1,
       text: "Do the washing!",
-      status: "complete"
+      status: "complete",
+      creation: Date().substring(0, 15)
     }
     // execute
     todoList.create("Do the washing!")
@@ -61,11 +65,13 @@ describe("TodoList", () => {
       id: 2,
       text: "Wash the dishes!",
       status: "incomplete",
+      creation: Date().substring(0, 15)
     },
     {
       id: 3,
       text: "Feed the cat!",
-      status: "incomplete"
+      status: "incomplete",
+      creation: Date().substring(0, 15)
     }]
     // execute
     todoList.create("Make some food!")
@@ -83,11 +89,13 @@ describe("TodoList", () => {
       id: 2,
       text: "Wash the dishes!",
       status: "complete",
+      creation: Date().substring(0, 15)
     },
     {
       id: 3,
       text: "Feed the cat!",
-      status: "complete"
+      status: "complete",
+      creation: Date().substring(0, 15)
     }]
     // execute
     todoList.create("Make some food!")
@@ -104,7 +112,8 @@ describe("TodoList", () => {
     const expected = {
       id: 1,
       text: "turn the heating on!",
-      status: "incomplete"
+      status: "incomplete",
+      creation: Date().substring(0, 15)
     }
     // execute
     todoList.create("turn the heating on!")
@@ -134,7 +143,8 @@ describe("TodoList", () => {
     const expected = [{
       id: 1,
       text: "turn the heating on!",
-      status: "incomplete"
+      status: "incomplete",
+      creation: Date().substring(0, 15)
     }]
     // execute
     todoList.create("turn the heating on!")
@@ -153,5 +163,44 @@ describe("TodoList", () => {
     // verify
     expect(result).toEqual(expected)
   })
+  it("search todo by day and return in list", () => {
+    // set up
+    const expected = [{
+      id: 1,
+      text: "turn the heating on!",
+      status: "incomplete",
+      creation: Date().substring(0, 15)
+    },
+    {
+      id: 2,
+      text: "Make some food!",
+      status: "incomplete",
+      creation: Date().substring(0, 15)
+    },
+    {
+      id: 3,
+      text: "Do something useful",
+      status: "incomplete",
+      creation: Date().substring(0, 15)
+    },
+    {
+      id: 4,
+      text: "Read JS book",
+      status: "incomplete",
+      creation: Date().substring(0, 15)
+    },
+  
+  
+  ]
+    // execute
+    todoList.create("turn the heating on!")
+    todoList.create("Make some food!")
+    todoList.create("Do something useful")
+    todoList.create("Read JS book")
+    const result = todoList.searchToDoByDay(2)
+    // verify
+    expect(result).toEqual(expected)
+  })
+
 
 })

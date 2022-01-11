@@ -1,4 +1,5 @@
-/* 
+/*
+---- REQUIREMENTS ----
 DONE - Create a todo item that has an ID, text description, and starts off incomplete 
 DONE - Get all todo items
 DONE - Set a todo completed by its ID
@@ -18,7 +19,8 @@ class TodoList {
       const todo = {
           id: this.nextID,
           text: description,
-          status: "incomplete"
+          status: "incomplete",
+          creation: Date().substring(0, 15)
       }
       this.nextID++
       this.list.push(todo)
@@ -73,5 +75,18 @@ class TodoList {
     getAll(){
         return this.list
     }
-  }
+
+    searchToDoByDay(day) {
+        const dayArray = []
+        for (let i = 0; i < this.list.length; i++) {
+            if (this.list[i]['creation'].includes(day))
+            dayArray.push(this.list[i])
+        }
+    return dayArray
+    }
+}
+
+
   module.exports = TodoList
+  
+
