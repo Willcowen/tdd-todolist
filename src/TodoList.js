@@ -76,10 +76,10 @@ class TodoList {
         return this.list
     }
 
-    searchToDoByDay(day) {
+    searchToDoByDay(dayString) {
         const dayArray = []
         for (let i = 0; i < this.list.length; i++) {
-            if (this.list[i]['creation'].includes(day))
+            if (this.list[i]['creation'].includes(dayString))
             dayArray.push(this.list[i])
         }
     return dayArray

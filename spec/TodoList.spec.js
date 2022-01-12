@@ -197,10 +197,19 @@ describe("TodoList", () => {
     todoList.create("Make some food!")
     todoList.create("Do something useful")
     todoList.create("Read JS book")
-    const result = todoList.searchToDoByDay(2)
+    const result = todoList.searchToDoByDay('Wed')
     // verify
     expect(result).toEqual(expected)
   })
 
-
+  it("return empty list if no todo's for that day.", () => {
+    // set up
+    const expected = []
+    // execute
+    todoList.create("Do something useful")
+    todoList.create("Read JS book")
+    const result = todoList.searchToDoByDay('Thu')
+    // verify
+    expect(result).toEqual(expected)
+  })
 })
